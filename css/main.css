@@ -252,7 +252,8 @@ header {
       .work__items article figure {
         border-radius: 6px;
         overflow: hidden;
-        transition: all 0.5s; }
+        transition: all 0.5s;
+        cursor: pointer; }
         .work__items article figure img {
           max-width: 380px; }
         .work__items article figure:hover {
