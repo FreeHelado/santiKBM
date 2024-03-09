@@ -1,0 +1,81 @@
+//// MEDIAS QUERY //
+@mixin tablet {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: 576px) {
+        @content;
+    }
+}
+
+// MIXINS FLEX //
+@mixin flex($gap : 10px) {
+    display: flex;
+    align-items: center;
+    gap: $gap;
+}
+
+@mixin flexColumn($gap : 10px) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+
+@mixin grid($columnas : 3) {
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: 10px;
+}
+
+
+/// MIXIN CUERPOS ///
+@mixin cuerpo($width : 1400px) {
+    max-width: $width;
+    margin: 0 auto;
+
+    @include mobile {
+        padding-inline: 15px;
+    }
+}
+
+
+//// MIXIN UTILES
+@mixin hover($tiempo : .2s) {
+    transition: all $tiempo;
+}
+
+@mixin blancoalpha($alpha : .5) {
+    color: rgba(255, 255, 255, $alpha);
+}
+
+//// EXTEND ANIMACIONES ///
+
+.opacity {
+    @include hover(.8s);
+    
+        &.hidden {
+            opacity: 0;
+        }
+    
+        &.show {
+            opacity: 1;
+        }
+}
+
+.show {
+    @include hover(.5s);
+    transition-delay: .2s;
+    
+        &.hidden {
+            opacity: 0;
+            translate: 0 15px;
+        }
+    
+        &.show {
+            opacity: 1;
+            translate: 0 0;
+        }
+}

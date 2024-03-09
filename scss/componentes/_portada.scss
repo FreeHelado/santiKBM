@@ -1,0 +1,304 @@
+body {
+    min-height: 100vh;
+    width: 100%;
+    background-color: $colorBgDark;
+    color: $colorTextoLight;
+}
+
+.bg {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 0;
+    
+
+    &__cont {
+        position: relative;
+
+        &::before {
+            $bgSize: 800px;
+            content: '';
+            position: absolute;
+            top: -$bgSize / 1;
+            right: 50%;
+            transform: translateX(50%);
+            width: $bgSize;
+            height: $bgSize;
+            background-color: $colorPrimario;
+            border-radius: 50%;
+            background-color: transparent;
+            box-shadow: 0 0 800px $colorPrimario;
+            filter: drop-shadow(0 0 100px $colorPrimario);
+            z-index: 1;
+        }
+    }
+    
+    
+}
+
+
+header {
+    width: 100%;
+    margin: 0 auto;
+    padding: 25px 50px;
+    position: fixed;
+    top: 0;
+    @include flex();
+    justify-content: space-between;
+    z-index: 500;
+    mix-blend-mode: difference;
+
+    nav {
+        color: #fff;
+        ul {
+            @include flex(25px);
+            li {
+                a {
+                    font-size: 18px;
+                    font-weight: 500;
+                    @include hover();
+                    &:hover {
+                        opacity: .5;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hola {
+    max-width: 100%;
+    @include flex();
+    padding-top: 50px;
+    min-height: 100vh;
+    background-image: url('../../assets/bg_kbm.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $colorBgDark;
+
+    
+    &__cont {
+        max-width: 980px;
+        margin: 0 auto;
+        border-radius: 50px;
+        border: 1px solid $colorBorde;
+        padding: 50px;
+
+        p {
+            font-size: 24px;
+            color: $colorTextoLight;
+        }
+    }
+}
+
+.work {
+    padding: 50px;
+    width: 100%;
+    @include flexColumn(25px);
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    @include hover(.3s);
+
+
+    &::before {
+        --size: 60px;
+        --line: hsla(0, 0%, 69%, 0.15);
+        content: '';
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        background: linear-gradient(90deg,
+                var(--line) 1px,
+                transparent 1px var(--size)) 50% 50% / var(--size) var(--size),
+            linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size);
+        mask: linear-gradient(-15deg, transparent 30%, white);
+        top: 0;
+        transform-style: flat;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+
+    &__bg {
+        font-size: 220px;
+        font-weight: 800;
+        color: $colorPrimario;
+        text-align: center;
+        position: sticky;
+
+        &.hidden {
+            top: 0;
+            opacity: 0;
+            transform: scale(0.2);
+        }
+        
+        &.show {
+            top: 0;
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    &__title {
+        min-height: 100vh;
+        width: auto;
+        overflow-x: hidden;
+        
+        &--cont {
+            @include flex(50px);
+            font-size: 100px;
+            width: 100%;
+            white-space: nowrap;
+
+        }
+    }
+
+    &__items {
+        @include flexColumn(25px);
+        article {
+            @include flex(30px);
+            @include hover(3s);
+            padding-block: 70px;
+            &:hover {
+                figure {
+                    transform: rotate(-1deg);
+                    box-shadow: 0 0 50px 0px $colorPrimarioClaro;
+                    scale: 1.1;
+                }
+            }
+            figure {
+                border-radius: 6px;
+                overflow: hidden;
+                @include hover(.5s);
+                img {
+                    max-width: 380px;
+                }
+                &:hover {
+                    
+                        transform: rotate(-2deg);
+                        box-shadow: 0 0 50px $colorPrimarioClaro;
+                        scale: 1.1;
+                }
+            }
+    
+            &:nth-child(odd) {
+                align-self: flex-end;
+            }
+    
+            &.hidden {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+    
+            &.show {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+    
+        }
+    
+        &--info {
+            @include flexColumn(5px);
+            h3 {
+                font-size: 30px;
+                font-weight: 400;
+            }
+            h4 {
+                font-size: 26px;
+                font-weight: 400;
+            }
+    
+            &--tags {
+                @include flex(5px);
+                padding-block: 15px;
+                span {
+                    border: 1px solid $colorPrimario;
+                    padding: 5px 15px;
+                    border-radius: 50px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+}
+
+
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    transition: all .2s;
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    font-size: 60px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal-content {
+    margin: auto;
+    background-color: #1c1c1c;
+    color: $colorTextoLight;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 90%;
+    max-height: 90vh;
+
+    @media (max-width: 780px) {
+        flex-direction: column;
+    }
+
+    figure {
+        max-width: 680px;
+
+        img {
+            max-width: 680px;
+            height: 100%;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        gap: 20px;
+        width: 100%;
+
+        h2 {
+            font-size: 50px;
+        }
+
+        h3 {
+            font-size: 30px;
+        }
+
+    }
+}

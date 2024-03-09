@@ -1,0 +1,162 @@
+// google Font
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+$font-family: 'Roboto Mono', monospace;
+
+///// FONT FACE //////
+@font-face {
+    font-family: 'NT Somic';
+    src: url('../../assets/font/NTSomic-Bold.eot');
+    src: local('NT Somic Bold'), local('NTSomic-Bold'),
+        url('../../assets/font/NTSomic-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../../assets/font/NTSomic-Bold.woff2') format('woff2'),
+        url('../../assets/font/NTSomic-Bold.woff') format('woff'),
+        url('../../assets/font/NTSomic-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NT Somic';
+    src: url('../../assets/font/NTSomic-Medium.eot');
+    src: local('NT Somic Medium'), local('NTSomic-Medium'),
+        url('../../assets/font/NTSomic-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../../assets/font/NTSomic-Medium.woff2') format('woff2'),
+        url('../../assets/font/NTSomic-Medium.woff') format('woff'),
+        url('../../assets/font/NTSomic-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NT Somic';
+    src: url('../../assets/font/NTSomic-Regular.eot');
+    src: local('NT Somic Regular'), local('NTSomic-Regular'),
+        url('../../assets/font/NTSomic-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../../assets/font/NTSomic-Regular.woff2') format('woff2'),
+        url('../../assets/font/NTSomic-Regular.woff') format('woff'),
+        url('../../assets/font/NTSomic-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NT Somic';
+    src: url('../../assets/font/NTSomic-Semibold.eot');
+    src: local('NT Somic Semibold'), local('NTSomic-Semibold'),
+        url('../../assets/font/NTSomic-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('../../assets/font/NTSomic-Semibold.woff2') format('woff2'),
+        url('../../assets/font/NTSomic-Semibold.woff') format('woff'),
+        url('../../assets/font/NTSomic-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+$santiKbm: 'NT Somic';
+
+//////////////////////////////
+//////////VARIABLES///////////
+//////////////////////////////
+
+/////////////////////
+///colores///////////
+$colorPrimario: #2844cf;
+$colorPrimarioClaro: darken($colorPrimario, 30%);
+
+
+/////////////////////
+///fondos///////////
+$colorBgDark: #1b1b1b;
+$colorBgFullDark: #1c1c1c;
+
+/////////////////////
+///textos///////////
+$colorTextoLight: #dfdad9;
+$colorTextoDark: #11151c;
+
+/////////////////////
+///utiles///////////
+$colorBorde: #dfdad9;
+
+
+
+//Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/// 
+
+html {
+    
+
+    h1 {
+        line-height: 1.1;
+    }
+
+    ul {
+        list-style: none;
+
+        li {
+            list-style: none;
+        }
+    }
+
+    i {
+        color: currentColor;
+        line-height: 1;
+    }
+
+    button {
+        font-family: $font-family;
+        padding: 20px;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    a {
+        text-decoration: none;
+        color: currentColor;
+    }
+}
+
+// Generales
+body {
+    font-family: $santiKbm;
+
+    i {
+        vertical-align: middle;
+    }
+}
+
+h1 {
+    font-size: 50px;
+}
+
+img {
+    font-style: italic;
+    max-width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    vertical-align: middle;
+    shape-margin: 1rem;
+}
+
+input {
+    height: 45px;
+    border-radius: 5px;
+    box-shadow: none;
+    border: none;
+    font-family: $font-family;
+    font-size: 14px;
+    padding-inline: 10px;
+}

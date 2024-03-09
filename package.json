@@ -1,0 +1,16 @@
+{
+  "name": "santikbm",
+  "version": "1.0.0",
+  "description": "santi kbm web",
+  "main": "index.js",
+  "scripts": {
+    "dale-sass": "node-sass --include-path scss scss/main.scss css/main.css -w",
+    "sourcemap-sass": "node-sass --watch --source-map true scss/main.scss css/main.css"
+  },
+  "author": "Alejandro Ferreira",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^9.0.0",
+    "nodemon": "^3.1.0"
+  }
+}

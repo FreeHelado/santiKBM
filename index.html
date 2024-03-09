@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/swiper-bundle.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/swiper-bundle.js" defer></script>
+
+    <title>santiKBM</title>
+
+
+
+</head>
+<body>
+
+    
+    <header>
+        <h1>santiKBM</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Me</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="bg">
+        <div class="bg__cont"></div>
+    </div>
+
+
+    <!-- MODAL -->
+    <div id="myModal" class="modal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <figure>
+                <img id="modalImg">
+            </figure>
+            <div class="modal-content__info">
+                <h2 id="modalTitle"></h2>
+                <h3 id="modalSubtitle"></h3>
+                <div id="modalSpotify"></div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+
+
+        <section class="hola">
+            <div class="hola__cont">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nisi quod dolores ea adipisci iure, velit itaque quia modi veniam consequatur. Eius dolor harum natus hic delectus obcaecati voluptate dolorum eaque error ut? At fugiat tempore eum sunt voluptatum, cupiditate voluptas alias, optio atque recusandae dolorem! Saepe hic expedita asperiores maxime rerum nisi dolorem reiciendis voluptatibus tenetur quae fugiat aperiam distinctio illum consequuntur assumenda sint nihil enim, unde nobis iure corrupti! Quo, placeat! Dolores fugiat quo dolor voluptatibus sint, quasi veritatis quidem quos earum molestias corrupti necessitatibus placeat delectus. Nostrum, aut? Facere dolores qui magni delectus molestiae, eius fugit obcaecati!</p>
+            </div>
+        </section>
+
+        <section class="work hidden">
+            <div class="work__bg hidden">WORK</div>
+
+            
+            <div class="work__title">
+                <div class="work__title--cont">
+                    <h2>PRODUCTION MIXING MASTERING</h2>
+                </div>
+            </div>
+
+            
+
+            <div class="work__items">
+                <article class="hidden work__item" alt="Articulo 1">
+                    <figure>
+                        <img class="article-img" src="assets/tapas/EP02.jpeg" alt="">
+                    </figure>
+                    <div class="work__items--info">
+                        <h3 id="modalTitle">santiKBM</h3>
+                        <h4 id="modalSubtitle">EP02 (2024)</h4>
+                        <div class="work__items--info--tags">
+                            <span>Production</span>
+                            <span>Mixing</span>
+                            <span>Mastering</span>
+                        </div>
+                        <div class="spotify" id="modalSpotify"
+                            data-spotify-link="5LrsWiMEkL3oNpYHSlUYUV">
+                        </div>
+                </article>
+                <article class="hidden work__item" alt="Articulo 2">
+                    <figure>
+                        <img class="article-img" src="assets/tapas/produ_mezcla_masterterter.JPG" alt="">
+                    </figure>
+                    <div class="work__items--info">
+                        <h3 id="modalTitle">Andy Falcone + santiKBM</h3>
+                        <h4 id="modalSubtitle">Grimorio (2022)</h4>
+                        <div class="work__items--info--tags">
+                            <span>Production</span>
+                            <span>Mixing</span>
+                            <span>Mastering</span>
+                        </div>
+                        <div class="spotify" id="modalSpotify"
+                            data-spotify-link="5CCFdmrbObPulf78gfT8zD">
+                        </div>
+                </article>
+                <article class="hidden work__item" alt="Articulo 2">
+                    <figure>
+                        <img class="article-img" src="assets/tapas/eldiscodelhelado.jpeg" alt="">
+                    </figure>
+                    <div class="work__items--info">
+                        <h3>Los Ultraman</h3>
+                        <h4>El Disco del Helado (2020)</h4>
+                        <div class="work__items--info--tags">
+                            <span>Production</span>
+                            <span>Mixing</span>
+                            <span>Mastering</span>
+                        </div>
+                        <div class="spotify" id="modalSpotify"
+                            data-spotify-link="5Jjv0oBTIw3to8UwhFfLlZ">
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+
+        </section>
+    </main>
+    
+</body>
+</html>
