@@ -151,6 +151,10 @@ header {
   justify-content: space-between;
   z-index: 500;
   mix-blend-mode: difference; }
+  @media screen and (max-width: 576px) {
+    header {
+      flex-direction: column;
+      align-items: center; } }
   header nav {
     color: #fff; }
     header nav ul {
@@ -183,9 +187,17 @@ header {
     border-radius: 50px;
     border: 1px solid #dfdad9;
     padding: 50px; }
+    @media screen and (max-width: 576px) {
+      .hola__cont {
+        padding-inline: 15px;
+        border: none; } }
     .hola__cont p {
       font-size: 24px;
-      color: #dfdad9; }
+      color: #dfdad9;
+      line-height: 1.5; }
+      @media screen and (max-width: 576px) {
+        .hola__cont p {
+          font-size: 20px; } }
 
 .work {
   padding: 50px;
@@ -216,6 +228,9 @@ header {
     color: #2844cf;
     text-align: center;
     position: sticky; }
+    @media screen and (max-width: 576px) {
+      .work__bg {
+        font-size: 80px; } }
     .work__bg.hidden {
       top: 0;
       opacity: 0;
@@ -228,6 +243,9 @@ header {
     min-height: 100vh;
     width: auto;
     overflow-x: hidden; }
+    @media screen and (max-width: 576px) {
+      .work__title {
+        display: none; } }
     .work__title--cont {
       display: flex;
       align-items: center;
@@ -235,6 +253,9 @@ header {
       font-size: 100px;
       width: 100%;
       white-space: nowrap; }
+      @media screen and (max-width: 576px) {
+        .work__title--cont {
+          font-size: 45px; } }
   .work__items {
     display: flex;
     flex-direction: column;
@@ -245,6 +266,9 @@ header {
       gap: 30px;
       transition: all 3s;
       padding-block: 70px; }
+      @media screen and (max-width: 576px) {
+        .work__items article {
+          flex-direction: column; } }
       .work__items article:hover figure {
         transform: rotate(-1deg);
         box-shadow: 0 0 50px 0px #0f1a4f;
@@ -262,6 +286,9 @@ header {
           scale: 1.1; }
       .work__items article:nth-child(odd) {
         align-self: flex-end; }
+      @media screen and (max-width: 576px) {
+        .work__items article:nth-child(odd) {
+          align-self: center; } }
       .work__items article.hidden {
         opacity: 0;
         transform: translateY(50px); }

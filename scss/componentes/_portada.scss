@@ -49,6 +49,11 @@ header {
     z-index: 500;
     mix-blend-mode: difference;
 
+    @include mobile() {
+        flex-direction: column;
+        align-items: center;
+    }
+
     nav {
         color: #fff;
         ul {
@@ -87,9 +92,19 @@ header {
         border: 1px solid $colorBorde;
         padding: 50px;
 
+        @include mobile() {
+            padding-inline: 15px;
+            border: none;
+        }
+
         p {
             font-size: 24px;
             color: $colorTextoLight;
+            line-height: 1.5;
+
+            @include mobile() {
+                font-size: 20px;
+            }
         }
     }
 }
@@ -130,6 +145,10 @@ header {
         text-align: center;
         position: sticky;
 
+        @include mobile() {
+            font-size: 80px;
+        }
+
         &.hidden {
             top: 0;
             opacity: 0;
@@ -147,6 +166,10 @@ header {
         min-height: 100vh;
         width: auto;
         overflow-x: hidden;
+
+        @include mobile() {
+            display: none;
+        }
         
         &--cont {
             @include flex(50px);
@@ -154,15 +177,25 @@ header {
             width: 100%;
             white-space: nowrap;
 
+            @include mobile() {
+                font-size: 45px;
+            }
+
         }
     }
 
     &__items {
         @include flexColumn(25px);
+        
         article {
             @include flex(30px);
             @include hover(3s);
             padding-block: 70px;
+
+            @include mobile() {
+                flex-direction: column;
+            }
+
             &:hover {
                 figure {
                     transform: rotate(-1deg);
@@ -186,8 +219,15 @@ header {
                 }
             }
     
+                        
             &:nth-child(odd) {
                 align-self: flex-end;
+            }
+
+            @include mobile() {
+                &:nth-child(odd) {
+                        align-self: center;
+                    }
             }
     
             &.hidden {
