@@ -30,6 +30,12 @@
     gap: 10px;
 }
 
+@mixin gridAuto($ancho , $gap) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($ancho, 1fr));
+    gap: $gap;
+}
+
 
 /// MIXIN CUERPOS ///
 @mixin cuerpo($width : 1400px) {

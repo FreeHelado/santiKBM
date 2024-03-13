@@ -218,10 +218,10 @@ header {
     }
 
     &__items {
-        @include flexColumn(25px);
+        @include gridAuto(400px, 30px);
         
         article {
-            @include flex(30px);
+            @include flexColumn(30px);
             @include hover(3s);
             padding-block: 70px;
 
@@ -236,36 +236,28 @@ header {
                     scale: 1.1;
                 }
             }
+
             figure {
                 border-radius: 6px;
                 overflow: hidden;
                 @include hover(.5s);
                 cursor: pointer;
+                max-width: 380px;
                 img {
                     max-width: 380px;
                 }
                 &:hover {
-                    
                         transform: rotate(-2deg);
                         box-shadow: 0 0 50px $colorPrimarioClaro;
                         scale: 1.1;
                 }
             }
     
-                        
-            &:nth-child(odd) {
-                align-self: flex-end;
-            }
-
-            @include mobile() {
-                &:nth-child(odd) {
-                        align-self: center;
-                    }
-            }
+           
     
             &.hidden {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(250px);
             }
     
             &.show {
@@ -278,11 +270,11 @@ header {
         &--info {
             @include flexColumn(5px);
             h3 {
-                font-size: 30px;
+                font-size: 18px;
                 font-weight: 400;
             }
             h4 {
-                font-size: 26px;
+                font-size: 15px;
                 font-weight: 400;
             }
     
@@ -295,6 +287,25 @@ header {
                     border-radius: 50px;
                     color: #fff;
                 }
+            }
+        }
+    }
+
+    &__menu {
+        @include flex(30px);
+        margin: 0 auto;
+        padding-block: 200px;
+        
+        a {
+            border: 1px solid $colorPrimario;
+            padding: 5px 15px;
+            border-radius: 50px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 20px;
+            @include hover();
+            &:hover {
+                background-color: $colorPrimario;
             }
         }
     }
