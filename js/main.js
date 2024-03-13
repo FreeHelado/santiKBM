@@ -111,3 +111,21 @@ workItems.forEach(function (workItem) {
     });
 });
 
+
+const header = document.getElementById('cabe');
+
+  // Función para manejar el scroll
+  function handleScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop === 0) {
+      // Cuando el scroll está en la parte superior de la página
+      header.classList.add('scroll');
+    } else {
+      // Cuando el scroll no está en la parte superior de la página
+      header.classList.remove('scroll');
+    }
+  }
+
+  // Añadir un listener para el evento scroll
+  window.addEventListener('scroll', handleScroll);

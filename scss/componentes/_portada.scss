@@ -48,14 +48,47 @@ header {
     justify-content: space-between;
     z-index: 500;
     mix-blend-mode: difference;
+    @include hover(.5s);
 
     @include mobile() {
         flex-direction: column;
         align-items: center;
     }
 
+    &.scroll {
+        flex-direction: column;
+        align-items: center;
+        mix-blend-mode: normal;
+        top: 50%;
+        transform: translateY(-50%);
+        @include hover(.5s);
+        h1 {
+            font-size: 180px;
+        }
+        h2 {
+            display: block;
+            color: $colorPrimario;
+            font-size: 30px;
+            text-shadow: rgba(40, 68, 207, .7) 0px 0px 39px;
+        }
+        nav {
+            display: none;
+        }
+    }
+
+    h1 {
+       @include hover(.5s); 
+    }
+
+    h2 {
+        display: none;
+    }
+
     nav {
         color: #fff;
+        @include hover(.5s);
+        
+
         ul {
             @include flex(25px);
             li {

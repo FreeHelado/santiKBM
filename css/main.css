@@ -150,13 +150,35 @@ header {
   gap: 10px;
   justify-content: space-between;
   z-index: 500;
-  mix-blend-mode: difference; }
+  mix-blend-mode: difference;
+  transition: all 0.5s; }
   @media screen and (max-width: 576px) {
     header {
       flex-direction: column;
       align-items: center; } }
+  header.scroll {
+    flex-direction: column;
+    align-items: center;
+    mix-blend-mode: normal;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.5s; }
+    header.scroll h1 {
+      font-size: 180px; }
+    header.scroll h2 {
+      display: block;
+      color: #2844cf;
+      font-size: 30px;
+      text-shadow: rgba(40, 68, 207, 0.7) 0px 0px 39px; }
+    header.scroll nav {
+      display: none; }
+  header h1 {
+    transition: all 0.5s; }
+  header h2 {
+    display: none; }
   header nav {
-    color: #fff; }
+    color: #fff;
+    transition: all 0.5s; }
     header nav ul {
       display: flex;
       align-items: center;
