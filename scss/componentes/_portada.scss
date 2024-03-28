@@ -318,9 +318,11 @@ header {
     &__menu {
         @include flex(30px);
         margin: 0 auto;
-        padding-block: 50px;
+        padding-block: 0px;
+        z-index: 10;
         position: sticky;
-        top: 50px;
+
+    top: 0;
         
         a {
             border: 1px solid $colorPrimario;
@@ -373,7 +375,7 @@ header {
 
 .modal-content {
     margin: auto;
-    background-color: #1c1c1c;
+    background-color: rgb(28, 28, 28);
     color: $colorTextoLight;
     padding: 20px;
     border-radius: 15px;
@@ -382,8 +384,10 @@ header {
     gap: 20px;
     max-width: 90%;
     max-height: 90vh;
-
-    
+    background-image: linear-gradient(
+        to top, 
+        rgba(28, 28, 28, 0), 
+        rgba(28, 28, 28, 0.7));
 
     @media (max-width: 780px) {
         flex-direction: column;

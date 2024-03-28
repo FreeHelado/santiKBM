@@ -86,6 +86,7 @@ function openModal(imgSrc, title, subtitle, spotifyLink) {
     modalSubtitle.textContent = subtitle;
     modalSpotify.innerHTML = '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/' + spotifyLink + '?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>';
     
+    setBackgroundFromImage(document.getElementById("modalImg").src);
 }
 
 
@@ -128,4 +129,36 @@ const header = document.getElementById('cabe');
   }
 
   // Añadir un listener para el evento scroll
-  window.addEventListener('scroll', handleScroll);
+window.addEventListener('scroll', handleScroll);
+  
+
+
+
+// Función para establecer el color de fondo promedio del modal basado en la imagen
+function setBackgroundFromImage(imageSrc) {
+    var img = new Image();
+    img.src = imageSrc;
+    img.onload = function() {
+        var canvas = document.createElement("canvas");
+        var ctx = canvas.getContext("2d");
+        canvas.width = this.width;
+        canvas.height = this.height;
+        ctx.drawImage(this, 0, 0);
+        var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        var data = imageData.data;
+        var sumR = 0, sumG = 0, sumB = 0;
+        for (var i = 0; i < data.length; i += 4) {
+            sumR += data[i];
+            sumG += data[i + 1];
+            sumB += data[i + 2];
+        }
+        var avgR = sumR / (data.length / 4);
+        var avgG = sumG / (data.length / 4);
+        var avgB = sumB / (data.length / 4);
+        document.querySelector(".modal-content").style.backgroundColor = "rgb(" + avgR + "," + avgG + "," + avgB + ")";
+    };
+}
+
+// Llamamos a la función con la URL de la imagen cargada dinámicamente
+
+

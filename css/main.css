@@ -355,9 +355,10 @@ header {
     align-items: center;
     gap: 30px;
     margin: 0 auto;
-    padding-block: 50px;
+    padding-block: 0px;
+    z-index: 10;
     position: sticky;
-    top: 50px; }
+    top: 0; }
     .work__menu a {
       border: 1px solid #2844cf;
       padding: 5px 15px;
@@ -407,7 +408,8 @@ header {
   align-items: center;
   gap: 20px;
   max-width: 90%;
-  max-height: 90vh; }
+  max-height: 90vh;
+  background-image: linear-gradient(to top, rgba(28, 28, 28, 0), rgba(28, 28, 28, 0.7)); }
   @media (max-width: 780px) {
     .modal-content {
       flex-direction: column;
