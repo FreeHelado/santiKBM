@@ -466,6 +466,9 @@ header {
     color: #2844cf;
     text-align: center;
     padding-block: 15px; }
+    @media screen and (max-width: 576px) {
+      .contacto h1 {
+        font-size: 50px; } }
   .contacto__cont {
     max-width: 980px;
     margin: 0 auto;
@@ -481,12 +484,18 @@ header {
       width: 100%;
       background-color: #1b1b1b;
       color: #fff; }
+      @media screen and (max-width: 576px) {
+        .contacto__cont p {
+          font-size: 15px; } }
   .contacto__redes {
     display: flex;
     align-items: center;
     gap: 10px;
     justify-content: space-between;
     width: 100%; }
+    @media screen and (max-width: 576px) {
+      .contacto__redes {
+        flex-direction: column; } }
     .contacto__redes a {
       font-size: 22px;
       transition: all 0.2s; }

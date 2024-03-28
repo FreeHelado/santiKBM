@@ -463,6 +463,10 @@ header {
         color: $colorPrimario;
         text-align: center;
         padding-block: 15px;
+
+        @include mobile() {
+            font-size: 50px;
+        }
     }
 
     &__cont {
@@ -479,6 +483,10 @@ header {
             width: 100%;
             background-color: $colorBgDark;
             color: #fff;
+
+            @include mobile() {
+                font-size: 15px;
+            }
         }
 
     }
@@ -486,6 +494,11 @@ header {
         @include flex();
         justify-content: space-between;
         width: 100%;
+
+        @include mobile() {
+                flex-direction: column;
+            }
+
         a {
             font-size: 22px;
             @include hover();
