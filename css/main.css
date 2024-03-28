@@ -450,7 +450,7 @@ header {
 
 .contacto {
   background-color: #1b1b1b;
-  color: #11151c;
+  color: #2844cf;
   height: 95vh;
   padding: 25px;
   transition: all 0.2s;
@@ -474,16 +474,13 @@ header {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: 25px; }
+    gap: 25px;
+    color: #2844cf; }
     .contacto__cont p {
       font-size: 20px;
       line-height: 1.5;
-      padding: 25px;
-      border: 2px solid #dfdad9;
-      border-radius: 12px;
       width: 100%;
-      background-color: #1b1b1b;
-      color: #fff; }
+      color: currentColor; }
       @media screen and (max-width: 576px) {
         .contacto__cont p {
           font-size: 15px; } }
@@ -492,14 +489,16 @@ header {
     align-items: center;
     gap: 10px;
     justify-content: space-between;
-    width: 100%; }
+    width: 100%;
+    color: currentColor; }
     @media screen and (max-width: 576px) {
       .contacto__redes {
         flex-direction: column; } }
     .contacto__redes a {
       font-size: 22px;
-      transition: all 0.2s; }
+      transition: all 0.2s;
+      color: currentColor; }
       .contacto__redes a:hover {
-        color: #2844cf; }
+        color: #0f1a4f; }
       .contacto__redes a i {
         font-size: 25px; }

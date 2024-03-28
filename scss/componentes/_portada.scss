@@ -446,7 +446,7 @@ header {
 
 .contacto {
     background-color: $colorBgDark;
-    color: $colorTextoDark;
+    color: $colorPrimario;
     height: 95vh;
     padding: 25px;
     @include hover(.2s);
@@ -473,16 +473,13 @@ header {
         max-width: 980px;
         margin: 0 auto;
         @include flex(25px);
+        color: $colorPrimario;
 
         p {
             font-size: 20px;
             line-height: 1.5;
-            padding: 25px;
-            border: 2px solid $colorBorde;
-            border-radius: 12px;
             width: 100%;
-            background-color: $colorBgDark;
-            color: #fff;
+            color: currentColor;
 
             @include mobile() {
                 font-size: 15px;
@@ -494,7 +491,7 @@ header {
         @include flex();
         justify-content: space-between;
         width: 100%;
-
+        color: currentColor;
         @include mobile() {
                 flex-direction: column;
             }
@@ -502,8 +499,9 @@ header {
         a {
             font-size: 22px;
             @include hover();
+            color: currentColor;
             &:hover {
-                color: $colorPrimario;
+                color: $colorPrimarioClaro;
             }
 
             i {
