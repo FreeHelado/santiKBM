@@ -64,12 +64,20 @@ header {
         @include hover(.5s);
         h1 {
             font-size: 180px;
+
+            @include mobile(){
+                font-size: 80px;
+            }
         }
         h2 {
             display: block;
             color: $colorPrimario;
             font-size: 30px;
             text-shadow: rgba(40, 68, 207, .7) 0px 0px 39px;
+
+            @include mobile() {
+                font-size: 22px;
+            }
         }
         nav {
             display: none;
