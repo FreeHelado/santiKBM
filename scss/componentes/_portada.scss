@@ -205,7 +205,7 @@ header {
         }
         
         &--cont {
-            @include flex(50px);
+            @include flexColumn(5px);
             font-size: 100px;
             width: 100%;
             white-space: nowrap;
@@ -214,16 +214,38 @@ header {
                 font-size: 45px;
             }
 
+            h2 {
+                text-align: left;
+                &:nth-child(2) {
+                    -webkit-text-stroke-width: 2px;
+                    -webkit-text-stroke-color: #fff;
+                    color: transparent;
+                    text-align: center;
+                }
+                &:nth-child(3) {
+                    
+                    text-align: right;
+                }
+            }
+
         }
     }
 
     &__items {
-        @include gridAuto(400px, 30px);
-        
+        @include flexColumn();
+
+        h2 {
+            font-size: 80px;
+            color: $colorPrimario;
+        }
+        &--cont {
+            @include gridAuto(400px, 30px);
+        }
+
         article {
             @include flexColumn(30px);
-            @include hover(3s);
-            padding-block: 70px;
+            @include hover(1s);
+            padding-block: 30px;
 
             @include mobile() {
                 flex-direction: column;
@@ -243,9 +265,11 @@ header {
                 @include hover(.5s);
                 cursor: pointer;
                 max-width: 380px;
+                
                 img {
                     max-width: 380px;
                 }
+
                 &:hover {
                         transform: rotate(-2deg);
                         box-shadow: 0 0 50px $colorPrimarioClaro;
@@ -294,7 +318,9 @@ header {
     &__menu {
         @include flex(30px);
         margin: 0 auto;
-        padding-block: 200px;
+        padding-block: 50px;
+        position: sticky;
+        top: 50px;
         
         a {
             border: 1px solid $colorPrimario;
@@ -357,8 +383,11 @@ header {
     max-width: 90%;
     max-height: 90vh;
 
+    
+
     @media (max-width: 780px) {
         flex-direction: column;
+        overflow: scroll;
     }
 
     figure {
@@ -367,6 +396,10 @@ header {
         img {
             max-width: 680px;
             height: 100%;
+
+            @include mobile() {
+                max-width: 100%;
+            }
         }
     }
 
@@ -377,12 +410,22 @@ header {
         gap: 20px;
         width: 100%;
 
+        @include mobile() {
+            gap: 10px;
+        }
+
         h2 {
             font-size: 50px;
+            @include mobile() {
+                font-size: 24px;
+            }
         }
 
         h3 {
             font-size: 30px;
+            @include mobile() {
+                font-size: 18px;
+            }
         }
 
     }
