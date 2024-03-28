@@ -443,3 +443,59 @@ header {
 
     }
 }
+
+.contacto {
+    background-color: $colorBgDark;
+    color: $colorTextoDark;
+    height: 95vh;
+    padding: 25px;
+    @include hover(.2s);
+    @include flexColumn();
+    align-items: center;
+    justify-content: space-between;
+
+    &.show {
+        background-color: #fff;
+    }
+
+    h1 {
+        font-size: 120px;
+        color: $colorPrimario;
+        text-align: center;
+        padding-block: 15px;
+    }
+
+    &__cont {
+        max-width: 980px;
+        margin: 0 auto;
+        @include flex(25px);
+
+        p {
+            font-size: 20px;
+            line-height: 1.5;
+            padding: 25px;
+            border: 2px solid $colorBorde;
+            border-radius: 12px;
+            width: 100%;
+            background-color: $colorBgDark;
+            color: #fff;
+        }
+
+    }
+    &__redes {
+        @include flex();
+        justify-content: space-between;
+        width: 100%;
+        a {
+            font-size: 22px;
+            @include hover();
+            &:hover {
+                color: $colorPrimario;
+            }
+
+            i {
+                font-size: 25px;
+            }
+        }
+    }
+}
