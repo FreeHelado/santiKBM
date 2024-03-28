@@ -384,10 +384,11 @@ header {
     gap: 20px;
     max-width: 90%;
     max-height: 90vh;
-    background-image: linear-gradient(
+    background-image: linear-gradient (
         to top, 
         rgba(28, 28, 28, 0), 
-        rgba(28, 28, 28, 0.7));
+        rgba(28, 28, 28, 0.7)
+        );
 
     @media (max-width: 780px) {
         flex-direction: column;
