@@ -189,12 +189,12 @@ header {
     header nav ul {
       display: flex;
       align-items: center;
-      gap: 25px; }
+      gap: 70px; }
       @media screen and (max-width: 576px) {
         header nav ul {
           gap: 15px; } }
       header nav ul li a {
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 500;
         transition: all 0.2s; }
         header nav ul li a:hover {
@@ -514,6 +514,12 @@ header {
     align-items: center;
     gap: 25px;
     color: #2844cf; }
+    .contacto__cont figure {
+      max-width: 400px;
+      border-radius: 8px;
+      overflow: hidden; }
+      .contacto__cont figure img {
+        max-width: 400px; }
     .contacto__cont p {
       font-size: 20px;
       line-height: 1.5;

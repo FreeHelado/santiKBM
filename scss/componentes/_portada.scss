@@ -98,13 +98,13 @@ header {
         
 
         ul {
-            @include flex(25px);
+            @include flex(70px);
             @include mobile() {
                 gap: 15px;
             }
             li {
                 a {
-                    font-size: 18px;
+                    font-size: 20px;
                     font-weight: 500;
                     @include hover();
                     &:hover {
@@ -521,6 +521,15 @@ header {
         margin: 0 auto;
         @include flex(25px);
         color: $colorPrimario;
+
+        figure {
+            max-width: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            img {
+                max-width: 400px;
+            }
+        }
 
         p {
             font-size: 20px;
