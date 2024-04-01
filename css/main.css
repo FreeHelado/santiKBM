@@ -261,6 +261,9 @@ header {
   z-index: 1;
   position: relative;
   transition: all 0.3s; }
+  @media screen and (max-width: 576px) {
+    .work {
+      padding-inline: 15px; } }
   .work::before {
     --size: 60px;
     --line: hsla(0, 0%, 69%, 0.15);

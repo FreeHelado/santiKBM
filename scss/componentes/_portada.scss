@@ -185,6 +185,10 @@ header {
     position: relative;
     @include hover(.3s);
 
+    @include mobile() {
+        padding-inline: 15px;
+    }
+
 
     &::before {
         --size: 60px;
