@@ -66,7 +66,7 @@ header {
             font-size: 180px;
 
             @include mobile(){
-                font-size: 80px;
+                font-size: 60px;
             }
         }
         h2 {
@@ -76,7 +76,7 @@ header {
             text-shadow: rgba(40, 68, 207, .7) 0px 0px 39px;
 
             @include mobile() {
-                font-size: 22px;
+                font-size: 18px;
             }
         }
         nav {
@@ -99,6 +99,9 @@ header {
 
         ul {
             @include flex(25px);
+            @include mobile() {
+                gap: 15px;
+            }
             li {
                 a {
                     font-size: 18px;
@@ -106,6 +109,10 @@ header {
                     @include hover();
                     &:hover {
                         opacity: .5;
+                    }
+
+                    @include mobile(){
+                        font-size: 15px;
                     }
                 }
             }
@@ -245,18 +252,32 @@ header {
         h2 {
             font-size: 80px;
             color: $colorPrimario;
+            @include mobile() {
+                font-size: 32px;
+                padding-block: 15px 10px;
+            }
         }
         &--cont {
             @include gridAuto(400px, 30px);
+
+            @include mobile() {
+                @include gridAuto(300px, 30px);
+            }
         }
 
         article {
             @include flexColumn(30px);
-            @include hover(1s);
+            @include hover(.5s);
             padding-block: 30px;
 
             @include mobile() {
-                flex-direction: column;
+                flex-direction: row;
+                padding-block: 0px;
+                align-items: center;
+                background-color: $colorBgDark;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 8px;
+                overflow: hidden;
             }
 
             &:hover {
@@ -270,12 +291,22 @@ header {
             figure {
                 border-radius: 6px;
                 overflow: hidden;
-                @include hover(.5s);
+                @include hover(.3s);
                 cursor: pointer;
                 max-width: 380px;
                 
+
+                @include mobile() {
+                    max-width: 120px;
+                    border-radius: 6px 0 0 6px;
+                    flex-shrink: 0;
+                }
+                
                 img {
                     max-width: 380px;
+                    @include mobile() {
+                        max-width: 120px;
+                    }
                 }
 
                 &:hover {
@@ -289,7 +320,7 @@ header {
     
             &.hidden {
                 opacity: 0;
-                transform: translateY(250px);
+                transform: translateY(80px);
             }
     
             &.show {
@@ -301,6 +332,11 @@ header {
     
         &--info {
             @include flexColumn(5px);
+
+            @include mobile() {
+                flex-shrink: 1;
+            }
+
             h3 {
                 font-size: 18px;
                 font-weight: 400;
@@ -379,6 +415,12 @@ header {
     font-weight: bold;
     color: #fff;
     cursor: pointer;
+    @include mobile() {
+        top: -5px;
+        right: 20px;
+        font-size: 50px;
+
+    }
 }
 
 .modal-content {
@@ -392,7 +434,7 @@ header {
     gap: 20px;
     max-width: 90%;
     max-height: 90vh;
-    background-image: linear-gradient (
+    background-image: linear-gradient(
         to top, 
         rgba(28, 28, 28, 0), 
         rgba(28, 28, 28, 0.7)
@@ -401,6 +443,11 @@ header {
     @media (max-width: 780px) {
         flex-direction: column;
         overflow: scroll;
+
+        background-image: linear-gradient(to bottom,
+                    rgba(28, 28, 28, 0),
+                    rgba(28, 28, 28, 0.7));
+
     }
 
     figure {

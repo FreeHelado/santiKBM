@@ -168,7 +168,7 @@ header {
       font-size: 180px; }
       @media screen and (max-width: 576px) {
         header.scroll h1 {
-          font-size: 80px; } }
+          font-size: 60px; } }
     header.scroll h2 {
       display: block;
       color: #2844cf;
@@ -176,7 +176,7 @@ header {
       text-shadow: rgba(40, 68, 207, 0.7) 0px 0px 39px; }
       @media screen and (max-width: 576px) {
         header.scroll h2 {
-          font-size: 22px; } }
+          font-size: 18px; } }
     header.scroll nav {
       display: none; }
   header h1 {
@@ -190,12 +190,18 @@ header {
       display: flex;
       align-items: center;
       gap: 25px; }
+      @media screen and (max-width: 576px) {
+        header nav ul {
+          gap: 15px; } }
       header nav ul li a {
         font-size: 18px;
         font-weight: 500;
         transition: all 0.2s; }
         header nav ul li a:hover {
           opacity: .5; }
+        @media screen and (max-width: 576px) {
+          header nav ul li a {
+            font-size: 15px; } }
 
 .hola {
   max-width: 100%;
@@ -301,19 +307,34 @@ header {
     .work__items h2 {
       font-size: 80px;
       color: #2844cf; }
+      @media screen and (max-width: 576px) {
+        .work__items h2 {
+          font-size: 32px;
+          padding-block: 15px 10px; } }
     .work__items--cont {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
       gap: 30px; }
+      @media screen and (max-width: 576px) {
+        .work__items--cont {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 30px; } }
     .work__items article {
       display: flex;
       flex-direction: column;
       gap: 30px;
-      transition: all 1s;
+      transition: all 0.5s;
       padding-block: 30px; }
       @media screen and (max-width: 576px) {
         .work__items article {
-          flex-direction: column; } }
+          flex-direction: row;
+          padding-block: 0px;
+          align-items: center;
+          background-color: #1b1b1b;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 8px;
+          overflow: hidden; } }
       .work__items article:hover figure {
         transform: rotate(-1deg);
         box-shadow: 0 0 50px 0px #0f1a4f;
@@ -321,18 +342,26 @@ header {
       .work__items article figure {
         border-radius: 6px;
         overflow: hidden;
-        transition: all 0.5s;
+        transition: all 0.3s;
         cursor: pointer;
         max-width: 380px; }
+        @media screen and (max-width: 576px) {
+          .work__items article figure {
+            max-width: 120px;
+            border-radius: 6px 0 0 6px;
+            flex-shrink: 0; } }
         .work__items article figure img {
           max-width: 380px; }
+          @media screen and (max-width: 576px) {
+            .work__items article figure img {
+              max-width: 120px; } }
         .work__items article figure:hover {
           transform: rotate(-2deg);
           box-shadow: 0 0 50px #0f1a4f;
           scale: 1.1; }
       .work__items article.hidden {
         opacity: 0;
-        transform: translateY(250px); }
+        transform: translateY(80px); }
       .work__items article.show {
         opacity: 1;
         transform: translateY(0px); }
@@ -340,6 +369,9 @@ header {
       display: flex;
       flex-direction: column;
       gap: 5px; }
+      @media screen and (max-width: 576px) {
+        .work__items--info {
+          flex-shrink: 1; } }
       .work__items--info h3 {
         font-size: 18px;
         font-weight: 400; }
@@ -403,6 +435,11 @@ header {
   font-weight: bold;
   color: #fff;
   cursor: pointer; }
+  @media screen and (max-width: 576px) {
+    .modal-close {
+      top: -5px;
+      right: 20px;
+      font-size: 50px; } }
 
 .modal-content {
   margin: auto;
@@ -415,11 +452,12 @@ header {
   gap: 20px;
   max-width: 90%;
   max-height: 90vh;
-  background-image: linear-gradient to top, rgba(28, 28, 28, 0), rgba(28, 28, 28, 0.7); }
+  background-image: linear-gradient(to top, rgba(28, 28, 28, 0), rgba(28, 28, 28, 0.7)); }
   @media (max-width: 780px) {
     .modal-content {
       flex-direction: column;
-      overflow: scroll; } }
+      overflow: scroll;
+      background-image: linear-gradient(to bottom, rgba(28, 28, 28, 0), rgba(28, 28, 28, 0.7)); } }
   .modal-content figure {
     max-width: 680px; }
     .modal-content figure img {
