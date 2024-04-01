@@ -115,7 +115,23 @@ body {
   min-height: 100vh;
   width: 100%;
   background-color: #1b1b1b;
-  color: #dfdad9; }
+  color: #dfdad9;
+  position: relative; }
+  body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-attachment: fixed;
+    z-index: 3000;
+    height: auto;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    transition: all .3s; }
 
 .bg {
   position: fixed;
@@ -160,12 +176,13 @@ header {
   header.scroll {
     flex-direction: column;
     align-items: center;
-    mix-blend-mode: normal;
     top: 50%;
     transform: translateY(-50%);
     transition: all 0.5s; }
     header.scroll h1 {
-      font-size: 180px; }
+      font-size: 180px;
+      color: #f5f3a9;
+      text-shadow: rgba(199, 28, 64, 0.9) 0px 0px 30px; }
       @media screen and (max-width: 576px) {
         header.scroll h1 {
           font-size: 60px; } }
@@ -184,7 +201,7 @@ header {
   header h2 {
     display: none; }
   header nav {
-    color: #fff;
+    color: #f5f3a9;
     transition: all 0.5s; }
     header nav ul {
       display: flex;
@@ -320,6 +337,12 @@ header {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
           gap: 30px; } }
+      .work__items--cont--tags {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none; }
     .work__items article {
       display: flex;
       flex-direction: column;
@@ -338,13 +361,17 @@ header {
       .work__items article:hover figure {
         transform: rotate(-1deg);
         box-shadow: 0 0 50px 0px #0f1a4f;
-        scale: 1.1; }
+        scale: 1.1;
+        filter: grayscale(1); }
+      .work__items article:hover .work__items--cont--tags {
+        display: flex; }
       .work__items article figure {
         border-radius: 6px;
         overflow: hidden;
         transition: all 0.3s;
         cursor: pointer;
-        max-width: 380px; }
+        max-width: 380px;
+        position: relative; }
         @media screen and (max-width: 576px) {
           .work__items article figure {
             max-width: 120px;
@@ -489,7 +516,6 @@ header {
 .contacto {
   background-color: #1b1b1b;
   color: #2844cf;
-  height: 95vh;
   padding: 25px;
   transition: all 0.2s;
   display: flex;

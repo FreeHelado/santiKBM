@@ -3,6 +3,24 @@ body {
     width: 100%;
     background-color: $colorBgDark;
     color: $colorTextoLight;
+    position: relative;
+
+    &::before {
+        content: " ";
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+        background-attachment: fixed;
+        z-index: 3000;
+        height: auto;
+        background-size: 100% 2px, 3px 100%;
+        pointer-events: none;
+        transition: all .3s;
+    }
 }
 
 .bg {
@@ -58,13 +76,14 @@ header {
     &.scroll {
         flex-direction: column;
         align-items: center;
-        mix-blend-mode: normal;
+        // mix-blend-mode: normal;
         top: 50%;
         transform: translateY(-50%);
         @include hover(.5s);
         h1 {
             font-size: 180px;
-
+            color: $colorTerciario;
+            text-shadow: rgba(199, 28, 64, .9) 0px 0px 30px;
             @include mobile(){
                 font-size: 60px;
             }
@@ -93,7 +112,7 @@ header {
     }
 
     nav {
-        color: #fff;
+        color: $colorTerciario;
         @include hover(.5s);
         
 
@@ -260,8 +279,18 @@ header {
         &--cont {
             @include gridAuto(400px, 30px);
 
+
+
             @include mobile() {
                 @include gridAuto(300px, 30px);
+            }
+
+            &--tags {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: none;
             }
         }
 
@@ -285,6 +314,13 @@ header {
                     transform: rotate(-1deg);
                     box-shadow: 0 0 50px 0px $colorPrimarioClaro;
                     scale: 1.1;
+                    filter: grayscale(1);
+
+
+                }
+
+                .work__items--cont--tags {
+                    display: flex;
                 }
             }
 
@@ -294,6 +330,7 @@ header {
                 @include hover(.3s);
                 cursor: pointer;
                 max-width: 380px;
+                position: relative;
                 
 
                 @include mobile() {
@@ -494,7 +531,6 @@ header {
 .contacto {
     background-color: $colorBgDark;
     color: $colorPrimario;
-    height: 95vh;
     padding: 25px;
     @include hover(.2s);
     @include flexColumn();
