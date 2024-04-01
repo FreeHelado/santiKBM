@@ -155,6 +155,20 @@ body {
       box-shadow: 0 0 800px #2844cf;
       filter: drop-shadow(0 0 100px #2844cf);
       z-index: 1; }
+    .bg__cont::after {
+      content: '';
+      position: absolute;
+      bottom: -1840px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 800px;
+      height: 800px;
+      background-color: #c71c40;
+      border-radius: 50%;
+      background-color: transparent;
+      box-shadow: 0 0 800px #c71c40;
+      filter: drop-shadow(0 0 100px #c71c40);
+      z-index: 1; }
 
 header {
   width: 100%;
@@ -560,16 +574,14 @@ header {
       @media screen and (max-width: 576px) {
         .contacto__cont figure {
           max-width: 300px; } }
-      .contacto__cont figure img {
-        max-width: 400px; }
     .contacto__cont p {
-      font-size: 18px;
+      font-size: 16px;
       line-height: 1.5;
       width: 100%;
       color: currentColor; }
       @media screen and (max-width: 576px) {
         .contacto__cont p {
-          font-size: 15px; } }
+          font-size: 14px; } }
   .contacto__redes {
     display: flex;
     align-items: center;

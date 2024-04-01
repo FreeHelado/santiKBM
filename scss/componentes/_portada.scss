@@ -21,6 +21,7 @@ body {
         pointer-events: none;
         transition: all .3s;
     }
+    
 }
 
 .bg {
@@ -48,6 +49,23 @@ body {
             background-color: transparent;
             box-shadow: 0 0 800px $colorPrimario;
             filter: drop-shadow(0 0 100px $colorPrimario);
+            z-index: 1;
+        }
+        
+        &::after {
+            $bgSize: 800px;
+            content: '';
+            position: absolute;
+            bottom: -$bgSize * 2.3;
+            right: 50%;
+            transform: translateX(50%);
+            width: $bgSize;
+            height: $bgSize;
+            background-color: $colorSecundario;
+            border-radius: 50%;
+            background-color: transparent;
+            box-shadow: 0 0 800px $colorSecundario;
+            filter: drop-shadow(0 0 100px $colorSecundario);
             z-index: 1;
         }
     }
@@ -582,19 +600,17 @@ header {
             @include mobile() {
                 max-width: 300px;
             }
-            img {
-                max-width: 400px;
-            }
+            
         }
 
         p {
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.5;
             width: 100%;
             color: currentColor;
 
             @include mobile() {
-                font-size: 15px;
+                font-size: 14px;
             }
         }
 
