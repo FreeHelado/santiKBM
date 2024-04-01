@@ -343,6 +343,12 @@ header {
         left: 50%;
         transform: translate(-50%, -50%);
         display: none; }
+        .work__items--cont--tags span {
+          border: 1px solid #dfdad9;
+          border-radius: 50px;
+          padding: 5px 10px;
+          font-size: 12px;
+          background-color: #1b1b1b; }
     .work__items article {
       display: flex;
       flex-direction: column;
@@ -364,7 +370,8 @@ header {
         scale: 1.1;
         filter: grayscale(1); }
       .work__items article:hover .work__items--cont--tags {
-        display: flex; }
+        display: flex;
+        gap: 8px; }
       .work__items article figure {
         border-radius: 6px;
         overflow: hidden;
@@ -540,14 +547,20 @@ header {
     align-items: center;
     gap: 25px;
     color: #2844cf; }
+    @media screen and (max-width: 576px) {
+      .contacto__cont {
+        flex-direction: column; } }
     .contacto__cont figure {
       max-width: 400px;
       border-radius: 8px;
       overflow: hidden; }
+      @media screen and (max-width: 576px) {
+        .contacto__cont figure {
+          max-width: 300px; } }
       .contacto__cont figure img {
         max-width: 400px; }
     .contacto__cont p {
-      font-size: 20px;
+      font-size: 18px;
       line-height: 1.5;
       width: 100%;
       color: currentColor; }
